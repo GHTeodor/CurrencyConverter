@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Currency converter in JavaScript</title>
+</head>
+<body>
+<main>
+    <div class="container">
+        <h1>Check live foreign currency exchange rates</h1>
+
+        <div class="main">
+            <div class="wrapper">
+                <div class="tabs">
+                    <div class="tab">
+                        <div class="tab active" data-tab="convert">
+                            <div class="tab-icon">
+                                <img src="./images/convert.svg" alt="convert">
+                            </div>
+                            <div class="tab-title">Convert</div>
+                        </div>
+                    </div>
+
+                    <div class="tab" data-tab="single">
+                        <div class="tab-icon">
+                            <img src="./images/single.svg" alt="single">
+                        </div>
+                        <div class="tab-title">Single</div>
+                    </div>
+                </div>
+
+                <div class="content show" data-child="convert">
+                    <form class="form">
+                        <div class="form-inputs">
+                            <div class="form-group">
+                                <label for="amount">Amount</label>
+                                <input type="number" name="amount" id="amount" placeholder="1.00">
+                            </div>
+                        </div>
+                        <div class="form-selects">
+                            <div class="form-select">
+                                <label for="from">From</label>
+                                <select class="select" name="from" id="from">
+                                    <option value="" disabled selected hidden>Choose currency</option>
+                                </select>
+                            </div>
+
+                            <div class="form-select__icon switch-currencies">
+                                <img src="./images/arrows.png" alt="arrows">
+                            </div>
+
+                            <div class="form-select">
+                                <label for="to">To</label>
+                                <select class="select" name="to" id="to">
+                                    <option value="" disabled selected hidden>Choose currency</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-info">
+                            <div class="loader">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="form-results">
+                                <!--                                FROM -->
+                                <div class="form-result__item from" id="resultFrom">
+<!--                                    <div class="form-result__item-icon icon">-->
+<!--                                        <img src="./images/arrow.svg" alt="arrow">-->
+<!--                                    </div>-->
+
+<!--                                    <div class="form-result__item-titles">-->
+<!--                                        <div class="form-result__item-title">USD</div>-->
+<!--                                        <div class="form-result__item-full">American dollar</div>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="form-result__item-value">1.00</div>-->
+                                </div>
+
+                                <!--                                EQUALS -->
+                                <div class="form-result__equals">
+                                    <img src="./images/equals.svg" alt="equals">
+                                </div>
+
+                                <!--                                TO -->
+                                <div class="form-result__item to" id="resultTo">
+<!--                                    <div class="form-result__item-icon icon">-->
+<!--                                        <img src="./images/arrow.svg" alt="arrow">-->
+<!--                                    </div>-->
+
+<!--                                    <div class="form-result__item-titles">-->
+<!--                                        <div class="form-result__item-title">EUR</div>-->
+<!--                                        <div class="form-result__item-full">Euro</div>-->
+<!--                                    </div>-->
+
+<!--                                    <div class="form-result__item-value">2.00</div>-->
+                                </div>
+                            </div>
+
+                            <button type="submit" class="form-submit">Convert</button>
+                        </div>
+
+                        <div class="rate-information">
+                            <div class="rate-conversion"></div>
+                            <div class="rate-last"></div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="content" data-child="single">
+                    <div class="currency-wrapper">
+                        <div class="currency-single">
+                            <select class="select" id="singleSelect">
+                                <option value="" disabled selected hidden>Choose currency</option>
+                            </select>
+
+                            <div class="currency-single__item">
+<!--                                <div class="currency-item currency-current">-->
+<!--                                    <div class="currency-titles">-->
+<!--                                        <div class="currency-title">USD</div>-->
+<!--                                        <div class="currency-full">American dollar</div>-->
+<!--                                    </div>-->
+<!--                                    <div class="currency-amount">1.00</div>-->
+<!--                                    <div class="currency-action">-->
+<!--                                        <button class="currency-change currency-button">Change</button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+                            </div>
+                        </div>
+
+                        <div class="currency-list">
+<!--                            <div class="currency-item">-->
+<!--                                <div class="currency-titles">-->
+<!--                                    <div class="currency-title">USD</div>-->
+<!--                                    <div class="currency-full">American dollar</div>-->
+<!--                                </div>-->
+<!--                                <div class="currency-amount">2.00</div>-->
+<!--                                <div class="currency-action">-->
+<!--                                    <button class="currency-change currency-button">Remove</button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+
+                    <div class="currency-add">
+                        <button class="currency-add__button">Add currency</button>
+
+                        <select class="select" id="addCurrencySelect">
+                            <option value="" disabled selected hidden>Choose currency</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script type="module" src="js/index.js"></script>
+<script type="module" src="js/events.js"></script>
+</body>
+</html>
